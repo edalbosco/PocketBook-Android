@@ -101,7 +101,7 @@ namespace ExpenseManager.Pages
             Models.Entry item = new Models.Entry()
             {
                 Amount = Amount,
-                Date = Date.ToString("yyyy/MM//dd"),
+                Date = Date.ToString("yyyy/MM/dd"),
                 Mean = MeanPicker.Items[MeanIndex],
                 Note = Note,
                 Reason = ReasonPicker.Items[ReasonIndex],
