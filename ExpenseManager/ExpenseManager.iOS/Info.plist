@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>6.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Expense Manager</string>
+	<string>Pocket Book</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ZetrixWeb.ExpenseManager</string>
+	<string>com.ZetrixWeb.PocketBook</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

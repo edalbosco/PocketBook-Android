@@ -58,7 +58,7 @@ namespace ExpenseManager.Pages
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             Entries = App.Database.GetItems().ToList();
 
@@ -74,12 +74,12 @@ namespace ExpenseManager.Pages
 
         private  void AddExpense(object obj)
         {
-             PopupNavigation.PushAsync(new ExpensePage());
+             PopupNavigation.PushAsync(new ExpensePage(this));
         }
 
         private void AddIncome(object obj)
         {
-            PopupNavigation.PushAsync(new IncomePage());
+            PopupNavigation.PushAsync(new IncomePage(this));
         }
 
         public void OnDeleteEntry(object sender, EventArgs e)

@@ -20,10 +20,13 @@ namespace ExpenseManager.Pages
         private string note;
         private DateTime date;
 
-        public IncomePage()
+        MainPage _main;
+
+        public IncomePage(MainPage main)
         {
             InitializeComponent();
             date = DateTime.Today;
+            _main = main;
 
             BindingContext = this;
         }
@@ -108,6 +111,8 @@ namespace ExpenseManager.Pages
             App.Database.SaveItem(item);
 
             PopupNavigation.PopAsync();
+
+            _main.LoadData();
         }
     }
 }
