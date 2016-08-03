@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExpenseManager"
+             x:Class="ExpenseManager.Pages.MainPage"
+             Title="Expense Manager">
+
+
+  <TabbedPage.ToolbarItems>
+    <ToolbarItem Name="AddIncome" Command="{Binding AddIncomeCommand}" Text="Register Income" Order="Primary" Icon="income.png" />
+    <ToolbarItem Name="AddExpense" Command="{Binding AddExpenseCommand}" Text="Register Expense" Order="Primary" Icon="expense.png" />
+  </TabbedPage.ToolbarItems>
+  
+  <StackLayout>
+    
+      <Frame>
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Balance:" FontSize="Large"/>
+          <Label Text="{Binding Balance}" FontSize="Large"/>
+        </StackLayout>
+      </Frame>
+
+    <Frame>
+      <StackLayout>
+        <Label Text="Entries" FontSize="Large"/>
+        <ListView ItemsSource="{Binding Entries}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <TextCell Text="{Binding EntryText}" Detail="{Binding EntryDetail}">
+                <TextCell.ContextActions>
+                  <MenuItem Clicked="OnDeleteEntry" Text="Delete" IsDestructive="True"/>
+                </TextCell.ContextActions>
+              </TextCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </Frame>
+    <StackLayout>
+
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
+
+
+<!-- 
+
+  <Grid VerticalOptions="Center" HorizontalOptions="Center">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+
+      <Image Source="income.png" x:Name="Collect"/>
+      <Label Text="Register Income" Grid.Row="1" HorizontalOptions="Center" FontSize="Large"/>
+
+      <Image Source="expense.png" Grid.Column="1" x:Name="Search"/>
+      <Label Text="Register Expense" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="Large"/>
+    </Grid>
+
+-->
+
+
+
+
+
+
+
+
+

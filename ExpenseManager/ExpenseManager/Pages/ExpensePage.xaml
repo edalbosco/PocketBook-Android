@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="ExpenseManager.Pages.ExpensePage"
+                 >
+
+  <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20, 20, 20, 20">
+    <StackLayout BackgroundColor="White" Padding="0, 10, 0, 0">
+      <TableView Intent="Form">
+        <TableRoot>
+          <TableSection Title="Expense">
+            <ViewCell >
+              <StackLayout Orientation="Horizontal" Margin="5,0,5,0">
+                <Label Text="Amount" VerticalOptions="Center"/>
+                <Entry Text="{Binding Amount, Mode=TwoWay}" Keyboard="Numeric" HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </ViewCell>
+            <ViewCell >
+              <StackLayout Orientation="Horizontal" Margin="5,0,5,0">
+                <Label Text="Reason" VerticalOptions="Center"/>
+                <Entry Text="{Binding Reason, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </ViewCell>
+            <ViewCell >
+              <StackLayout Orientation="Horizontal" Margin="5,0,5,0">
+                <Label Text="Note" VerticalOptions="Center"/>
+                <Entry Text="{Binding Note, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </ViewCell>
+            <ViewCell >
+              <StackLayout Orientation="Horizontal" Margin="5,0,5,0" >
+                <Label Text="Date" VerticalOptions="Center"/>
+                <DatePicker Date="{Binding Date, Mode=TwoWay}"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+              </StackLayout>
+            </ViewCell>
+          </TableSection>
+        </TableRoot>
+      </TableView>
+
+      <Button Text="Save" Clicked="SaveClicked"/>
+    </StackLayout>
+  </StackLayout>
+
+</pages:PopupPage>
