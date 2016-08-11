@@ -6,10 +6,11 @@
                  >
 
   <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20, 20, 20, 20">
-    <StackLayout BackgroundColor="White" Padding="0, 10, 0, 0">
-      <TableView Intent="Form">
+    <StackLayout BackgroundColor="White" Padding="0" >
+      <Label Text="Expense" FontSize="Large" HorizontalOptions="Center" />
+      <TableView Intent="Form" VerticalOptions="Start" HeightRequest="230" Margin="0">
         <TableRoot>
-          <TableSection Title="Expense">
+          <TableSection Title="">
             <ViewCell >
               <StackLayout Orientation="Horizontal" Margin="5,0,5,0">
                 <Label Text="Amount" VerticalOptions="Center"/>
@@ -37,6 +38,13 @@
           </TableSection>
         </TableRoot>
       </TableView>
+      <StackLayout >
+        <StackLayout Orientation="Horizontal" Margin="0" >
+          <Label Text="Picture" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+          <Image Source="camera.png" HeightRequest="30" HorizontalOptions="End" x:Name="PicButton" />
+        </StackLayout>
+        <Image x:Name="ExpensePic" HeightRequest="100" IsVisible="False" Source="bill.png" />
+      </StackLayout>
 
       <Button Text="Save" Clicked="SaveClicked"/>
     </StackLayout>

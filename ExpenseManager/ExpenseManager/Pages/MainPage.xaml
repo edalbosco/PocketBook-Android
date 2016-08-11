@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ExpenseManager"
              x:Class="ExpenseManager.Pages.MainPage"
-             Title="Pocket Book">
+             Title="Pocket Book"
+             Icon="icon.png">
 
 
   <TabbedPage.ToolbarItems>
@@ -26,7 +27,7 @@
         <ListView ItemsSource="{Binding Entries}">
           <ListView.ItemTemplate>
             <DataTemplate>
-              <TextCell Text="{Binding EntryText}" Detail="{Binding EntryDetail}">
+              <TextCell Text="{Binding EntryText}" Detail="{Binding EntryDetail}" TextColor="#B97F3E">
                 <TextCell.ContextActions>
                   <MenuItem Clicked="OnDeleteEntry" Text="Delete" IsDestructive="True"/>
                 </TextCell.ContextActions>

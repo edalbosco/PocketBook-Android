@@ -20,13 +20,24 @@ namespace ExpenseManager.Pages
 
         MainPage _main;
 
+        private TapGestureRecognizer PictureRecognizer = new TapGestureRecognizer();
+
         public ExpensePage(MainPage main)
         {
             InitializeComponent();
             date = DateTime.Today;
             _main = main;
 
+            PictureRecognizer.Tapped += PictureRecognizer_Tapped;
+            PicButton.GestureRecognizers.Add(PictureRecognizer);
+
             BindingContext = this;
+        }
+
+        private async void PictureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await DisplayAlert("Add Picture", "Here the application will take a picture or choose one from the galery", "Close");
+            ExpensePic.IsVisible = true;
         }
 
         public decimal Amount
